@@ -3,106 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Desa Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Website Resmi Desa Makmur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            overflow: hidden; /* Menghilangkan scroll */
-        }
-        .main-container {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .content-area {
-            flex: 1;
-            display: flex;
-            overflow: hidden;
-        }
-        /* Animasi Slide Otomatis */
-        .slider {
-            display: flex;
-            animation: slide 15s infinite;
-        }
-        @keyframes slide {
-            0% { transform: translateX(0%); }
-            33% { transform: translateX(-100%); }
-            66% { transform: translateX(-200%); }
-            100% { transform: translateX(0%); }
-        }
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80'); 
+                height: 60vh; background-size: cover; background-position: center; color: white; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .section-title { margin-bottom: 3rem; position: relative; font-weight: 600; }
+        .gallery-img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; transition: 0.3s; }
+        .gallery-img:hover { transform: scale(1.05); cursor: pointer; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        footer { background: #2c3e50; color: white; padding: 2rem 0; margin-top: 4rem; }
     </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body>
 
-    <div class="main-container" id="fullscreen-target">
-        
-        <header class="bg-green-700 text-white p-4 flex justify-between items-center shadow-md">
-            <h1 class="text-xl font-bold italic">Desa Asri Digital</h1>
-            <div class="space-x-4 flex items-center">
-                <span class="text-sm">Sabtu, 28 Februari 2026</span>
-                <button onclick="toggleFullScreen()" class="bg-white text-green-700 px-4 py-1 rounded-full font-semibold hover:bg-green-100 transition">
-                    ⛶ Fullscreen
-                </button>
+    <header class="hero">
+        <div class="container">
+            <h1 class="display-3">Selamat Datang di Desa Makmur</h1>
+            <p class="lead">Membangun Kemandirian, Menjaga Kearifan Lokal</p>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2 class="text-center section-title">Galeri Kegiatan Desa</h2>
+        <div class="row g-4">
+            <div class="col-md-4"><img src="https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?auto=format&fit=crop&w=500&q=60" class="gallery-img" alt="Foto 1"></div>
+            <div class="col-md-4"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=500&q=60" class="gallery-img" alt="Foto 2"></div>
+            <div class="col-md-4"><img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=500&q=60" class="gallery-img" alt="Foto 3"></div>
+            <div class="col-md-4"><img src="https://images.unsplash.com/photo-1599839619722-397514112634?auto=format&fit=crop&w=500&q=60" class="gallery-img" alt="Foto 4"></div>
+            <div class="col-md-4"><img src="https://images.unsplash.com/photo-1590072223844-5383f6007ec1?auto=format&fit=crop&w=500&q=60" class="gallery-img" alt="Foto 5"></div>
+            <div class="col-md-4"><img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=500&q=60" class="gallery-img" alt="Foto 6"></div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="text-center section-title">Potensi & Profil Desa</h2>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
-        </header>
+            <div class="col-md-6 px-lg-5">
+                <h3>Keindahan Alam Desa</h3>
+                <p>Desa kami dikelilingi oleh pegunungan dan sawah yang hijau. Melalui video ini, Anda dapat melihat bagaimana warga kami menjaga kelestarian alam sambil mengembangkan sektor pariwisata berkelanjutan.</p>
+                <button class="btn btn-outline-success">Selengkapnya</button>
+            </div>
+        </div>
 
-        <main class="content-area">
-            
-            <section class="w-1/2 relative overflow-hidden bg-black border-r-4 border-green-600">
-                <div class="slider h-full">
-                    <div class="min-w-full h-full relative">
-                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover opacity-80">
-                        <div class="absolute bottom-10 left-10 text-white bg-black/50 p-4 rounded">
-                            <h2 class="text-2xl font-bold">Pemandangan Sawah Selatan</h2>
-                        </div>
-                    </div>
-                    <div class="min-w-full h-full relative">
-                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover opacity-80">
-                        <div class="absolute bottom-10 left-10 text-white bg-black/50 p-4 rounded">
-                            <h2 class="text-2xl font-bold">Kawasan Hutan Lindung</h2>
-                        </div>
-                    </div>
-                    <div class="min-w-full h-full relative">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover opacity-80">
-                        <div class="absolute bottom-10 left-10 text-white bg-black/50 p-4 rounded">
-                            <h2 class="text-2xl font-bold">Danau Desa Wisata</h2>
-                        </div>
-                    </div>
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 px-lg-5">
+                <h3>Produk Unggulan UMKM</h3>
+                <p>Mulai dari kerajinan tangan hingga hasil tani organik, Desa Makmur memiliki beragam produk unggulan yang telah dipasarkan hingga tingkat nasional. Dukung ekonomi lokal kami!</p>
+                <button class="btn btn-outline-primary">Lihat Produk</button>
+            </div>
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7e90gBu4pas" frameborder="0" allowfullscreen></iframe>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <section class="w-1/2 flex flex-col bg-gray-900 p-4 overflow-y-auto">
-                <h3 class="text-white text-center mb-4 font-bold border-b border-gray-700 pb-2">VIDEO KEGIATAN DESA</h3>
-                
-                <div class="space-y-4 pr-2">
-                    <div class="aspect-video">
-                        <iframe class="w-full h-full rounded shadow-lg" 
-                            src="https://www.youtube.com/watch?v=3SfXv-kBGmE" 
-                            frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </section>
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2026 Pemerintah Desa Makmur. Seluruh Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
 
-        </main>
-
-        <footer class="bg-green-800 text-white p-2 text-center text-xs">
-            &copy; 2026 Pemerintah Desa Asri - Sistem Informasi Desa Terpadu
-        </footer>
-    </div>
-
-    <script>
-        function toggleFullScreen() {
-            let elem = document.getElementById("fullscreen-target");
-            if (!document.fullscreenElement) {
-                elem.requestFullscreen().catch(err => {
-                    alert(`Gagal Fullscreen: ${err.message}`);
-                });
-            } else {
-                document.exitFullscreen();
-            }
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
