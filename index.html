@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Desa Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Menghilangkan scroll */
+        }
+        .main-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-area {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+        /* Animasi Slide Otomatis */
+        .slider {
+            display: flex;
+            animation: slide 15s infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0%); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <div class="main-container" id="fullscreen-target">
+        
+        <header class="bg-green-700 text-white p-4 flex justify-between items-center shadow-md">
+            <h1 class="text-xl font-bold italic">Desa Asri Digital</h1>
+            <div class="space-x-4 flex items-center">
+                <span class="text-sm">Sabtu, 28 Februari 2026</span>
+                <button onclick="toggleFullScreen()" class="bg-white text-green-700 px-4 py-1 rounded-full font-semibold hover:bg-green-100 transition">
+                    ⛶ Fullscreen
+                </button>
+            </div>
+        </header>
+
+        <main class="content-area">
+            
+            <section class="w-1/2 relative overflow-hidden bg-black border-r-4 border-green-600">
+                <div class="slider h-full">
+                    <div class="min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover opacity-80">
+                        <div class="absolute bottom-10 left-10 text-white bg-black/50 p-4 rounded">
+                            <h2 class="text-2xl font-bold">Pemandangan Sawah Selatan</h2>
+                        </div>
+                    </div>
+                    <div class="min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover opacity-80">
+                        <div class="absolute bottom-10 left-10 text-white bg-black/50 p-4 rounded">
+                            <h2 class="text-2xl font-bold">Kawasan Hutan Lindung</h2>
+                        </div>
+                    </div>
+                    <div class="min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover opacity-80">
+                        <div class="absolute bottom-10 left-10 text-white bg-black/50 p-4 rounded">
+                            <h2 class="text-2xl font-bold">Danau Desa Wisata</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-1/2 flex flex-col bg-gray-900 p-4 overflow-y-auto">
+                <h3 class="text-white text-center mb-4 font-bold border-b border-gray-700 pb-2">VIDEO KEGIATAN DESA</h3>
+                
+                <div class="space-y-4 pr-2">
+                    <div class="aspect-video">
+                        <iframe class="w-full h-full rounded shadow-lg" 
+                            src="https://www.youtube.com/watch?v=3SfXv-kBGmE" 
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="bg-green-800 text-white p-2 text-center text-xs">
+            &copy; 2026 Pemerintah Desa Asri - Sistem Informasi Desa Terpadu
+        </footer>
+    </div>
+
+    <script>
+        function toggleFullScreen() {
+            let elem = document.getElementById("fullscreen-target");
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch(err => {
+                    alert(`Gagal Fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
